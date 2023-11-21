@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+  width: 85%;
+  margin: 0 auto;
+}
+
+.card {
+  /* 卡片在容器內的排版 */
+  /* flex-basis, flex-grow, flex-shrink:  */
+  flex: 7% 1 1;
+  height: 8vw;
+  border: 1px solid #2f2121;
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.5);
+
+  /* 卡片邊距 */
+  margin: 3px;
+  /* 卡片內部元素的排版 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  img {
+    max-width: 30%;
+    align-self: center;
+  }
+  p {
+    margin: 3px;
+    font-size: 10px;
+  }
+  /* 數字顛倒  */
+  p:last-child {
+    transform: rotate(180deg);
+  }
+}
+
+.back {
+  background: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png");
+  background-size: cover;
+}
+
+.paired {
+  background-color: rgb(119, 115, 110);
+}
+
+#header {
+  /* border: 1px solid blue; */
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 85%;
+  align-items: flex-end;
+
+  .title {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    img {
+      max-width: 3em;
+    }
+    h3 {
+      padding-left: 0.5em;
+    }
+  }
+  .score {
+    color: #6c90ac;
+  }
+  .tried {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: 2;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #ffd54f;
+  }
+}
+
+/* .wrong {
+  animation-name: wrongAnimation
+  animation-direction: normal;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+  animation-timing-function: linear;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #ff4f61;
+  }
+} */
+
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+.completed > p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+.completed > p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
